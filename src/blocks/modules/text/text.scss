@@ -1,0 +1,45 @@
+.text {
+    color: $primaryTextColor;
+    font-size: rem(16);
+    font-weight: 400;
+
+    &_size {
+        &_12 {
+            font-size: rem(12);
+        }
+        &_14 {
+            font-size: rem(14);
+        }
+        &_20 {
+            font-size: rem(20);
+        }
+        &_24 {
+            font-size: rem(24);
+        }
+        &_96 {
+            font-size: rem(96);
+        }
+    }
+    &_color {
+        &_primary {
+            color: $primaryColor;
+        }
+        &_secondary {
+            color: $secondaryColor;
+        }
+        &_gray {
+            color: $lightGray;
+        }
+        &_white {
+            color: $white;
+        }
+    }
+    &_weight {
+        $zero: 0;
+        @for $w from 3 to 8 {
+            &_#{$w}00 {
+                font-weight: #{$w}#{$zero}0;
+            }
+        }
+    }
+}

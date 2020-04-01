@@ -1,0 +1,344 @@
+@font-face {
+	font-family: "Gilroy";
+	src:url(../../font/Gilroy-Black.ttf);
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../../font/Gilroy-ExtraBold.ttf);
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../fonts/Gilroy-Bold.ttf);
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../fonts/Gilroy-Heavy.ttf);
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../fonts/Gilroy-SemiBold.ttf);
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../fonts/Gilroy-Medium.ttf);
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../fonts/Gilroy-Regular.ttf);
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy";
+	src:url(../fonts/Gilroy-Thin.ttf);
+	font-weight: 200;
+	font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?aiqnll');
+  src:  url('../fonts/icomoon.eot?aiqnll#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?aiqnll') format('truetype'),
+    url('../fonts/icomoon.woff?aiqnll') format('woff'),
+    url('../fonts/icomoon.svg?aiqnll#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-form-send {
+	color: $lightGray;
+	&:before {
+		content: "\e900";
+	}
+}
+.icon-hamburger {
+	color: $white;
+	&:before {
+		content: "\e901";
+	}
+}
+.icon-list {
+	&:before {
+		content: "\e902";
+	}
+}
+.icon-location {
+	color: $white;
+	&:before {
+		content: "\e903";
+	}
+}
+.icon-maximize {
+	&:before {
+		content: "\e904";
+	}
+}
+.icon-menu-blowtorch {
+	color: $secondaryColor;
+	&:before {
+		content: "\e905";
+	}
+}
+.icon-menu-cabel {
+	color: $secondaryColor;
+	&:before {
+		content: "\e906";
+	}
+}
+.icon-menu-carcass {
+	color: $secondaryColor;
+	&:before {
+		content: "\e907";
+	}
+}
+.icon-menu-jack {
+	color: $secondaryColor;
+	&:before {
+		content: "\e908";
+	}
+}
+.icon-menu-lift {
+	color: $secondaryColor;
+	&:before {
+		content: "\e909";
+	}
+}
+.icon-menu-oil {
+	color: $secondaryColor;
+	&:before {
+		content: "\e90a";
+	}
+}
+.icon-menu-pressure {
+	color: $secondaryColor;
+	&:before {
+		content: "\e90b";
+	}
+}
+.icon-menu-speed {
+	color: $secondaryColor;
+	&:before {
+		content: "\e90c";
+	}
+}
+.icon-menu-tire {
+	color: $secondaryColor;
+	&:before {
+		content: "\e90d";
+	}
+}
+.icon-menu-wrench {
+	color: $secondaryColor;
+	&:before {
+		content: "\e90e";
+	}
+}
+
+.icon-mini-logo {
+	&_size {
+		&_big {
+			font-size: rem(58);
+		}
+	}
+	&-text {
+		color: $primaryColor;
+	}
+	.path1 {
+		color: $secondaryColor;
+		&:before {
+			content: "\e90f";
+		}
+	}
+	.path2:before,.path3:before,.path4:before,.path5:before,.path6:before,.path7:before,.path8:before,.path9:before,.path10:before,.path11:before,.path12:before,.path13:before,.path14:before {
+		margin-left: -1em;
+	}
+	.path2:before {
+		content: "\e910";
+	}
+	.path3:before {
+		content: "\e911";
+	}
+	.path4:before {
+		content: "\e912";
+	}
+	.path5:before {
+		content: "\e913";
+	}
+	.path6:before {
+		content: "\e914";
+	}
+	.path7:before {
+		content: "\e915";
+	}
+	.path8:before {
+		content: "\e916";
+	}
+	.path9:before {
+		content: "\e917";
+	}
+	.path10:before {
+		content: "\e918";
+	}
+	.path11:before {
+		content: "\e919";
+	}
+	.path12:before {
+		content: "\e91a";
+	}
+	.path13:before {
+		content: "\e91b";
+	}
+	.path14:before {
+		content: "\e91c";
+	}
+}
+
+.icon-spray {
+	color: $secondaryColor;
+	&:before {
+		content: "\e91d";
+	}
+}
+.icon-technolgy-building {
+	color: $primaryColor;
+	&:before {
+		content: "\e91e";
+	}
+}
+.icon-technolgy-car {
+	color: $primaryColor;
+	&:before {
+		content: "\e91f";
+	}
+}
+.icon-technolgy-repair {
+	color: $primaryColor;
+	&:before {
+		content: "\e920";
+	}
+}
+.icon-technolgy-wheels {
+	color: $primaryColor;
+	&:before {
+		content: "\e921";
+	}
+}
+.icon-technolgy-worker {
+	color: $primaryColor;
+	&:before {
+		content: "\e922";
+	}
+}
+.icon-arrow-left {
+	color: $white;
+	&:before {
+		content: "\e923";
+	}
+}
+.icon-arrow-right {
+	color: $white;
+	&:before {
+		content: "\e924";
+	}
+}
+
+.icon-catalog {
+	color: $white;
+	&:before {
+		content: "\e925";
+	}
+
+  &_size {
+	  &_medium {
+		  font-size: rem(24);
+	  }
+  }
+}
+.icon-check {
+	color: $white;
+	&:before {
+		content: "\e926";
+	}
+}
+.icon-chevron-down {
+	color: $white;
+	&:before {
+		content: "\e927";
+	}
+}
+.icon-chevron-left {
+	color: $white;
+	&:before {
+		content: "\e928";
+	}
+}
+.icon-chevron-right {
+	color: $white;
+	&:before {
+		content: "\e929";
+	}
+}
+.icon-close {
+	color: $white;
+	&:before {
+		content: "\e92a";
+	}
+}
+.icon-filter {
+	color: $primaryColor;
+	&:before {
+		content: "\e92b";
+	}
+}
+.icon-filter-price-down {
+	color: $primaryColor;
+	&:before {
+		content: "\e92c";
+	}
+}
+.icon-filter-price-up {
+	color: $primaryColor;
+	&:before {
+		content: "\e92d";
+	}
+}
+.icon-form-mail {
+	color: #eceff1;
+	&:before {
+		content: "\e92e";
+	}
+}
+
+.icon-form-phone:before {
+  content: "\e92f";
+}

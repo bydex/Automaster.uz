@@ -1,0 +1,66 @@
+.nav {
+    $this: &;
+
+    padding: 30px 0;
+
+    &_theme {
+        &_white {
+            #{$this}__link, #{$this}__language, #{$this}__phone, #{$this}__subtitle {
+                color: $white;
+            }
+            #{$this}__phone-wrapper {
+                border-color: $white;
+            }
+        }
+    }
+    &__links {
+        margin: 0 -15px;
+    }
+    &__link {
+        display: inline-block;
+        position: relative;
+        margin: 0 15px;
+        padding: 9px 0;
+        text-transform: uppercase;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            transition: .3s;
+            background-color: $secondaryColor;
+        }
+
+        &:hover, &.active {
+            &::after {
+                width: 25px;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__languages {
+        display: flex;
+        padding-right: 34px;
+        margin: 0 -7.5px;
+    }
+    &__language {
+        padding: 5px 7.5px;
+        text-transform: uppercase;
+        transition: .3s;
+
+        &:hover, &.active {
+            color: $secondaryColor;
+        }
+    }
+    &__phone-wrapper {
+        padding-left: 34px;
+        border-left: 1px solid;
+    }
+}

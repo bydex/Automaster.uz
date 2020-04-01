@@ -1,0 +1,51 @@
+button, .btn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    border: none;
+    padding: 0;
+    transition: .3s;
+    font-family: inherit;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    &_theme {
+        &_primary {
+            color: $white;
+            background-color: $primaryColor;
+
+            &:hover, &.active {
+                color: $primaryColor;
+                background-color: $secondaryColor;
+            }
+        }
+    }
+    &_size {
+        &_standard {
+            min-width: 230px;
+            padding: 9px 18px;
+            font-size: rem(12);
+        }
+    }
+    &_text {
+        &_left {
+            text-align: left;
+        }
+    }
+
+    &.cube {
+        &:before {
+            top: 100%;
+            transform: translateY(-120%) rotate(45deg);
+        }
+        &:hover {
+            &:before {
+                transform: translateY(-50%) rotate(45deg);
+                opacity: 1;
+            }
+        }
+    }
+}

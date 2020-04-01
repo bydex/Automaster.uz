@@ -1,0 +1,15 @@
+header.header
+    nav.nav.nav_theme_white
+      .items
+        .item-1
+          .nav__links
+            each val, index in links
+              a.nav__link.text.text_size_12(class=val.active ? 'active' : '' href=val.href)= val.title
+        .item-2
+          .nav__right
+            .nav__languages
+              each val, index in language
+                button.nav__language.text.text_size_12(class=val.active ? 'active' : '')= val.value
+            .nav__phone-wrapper
+              .nav__phone.text.text_theme_20.text_weight_700 998 71 276 64 98
+              .nav__subtitle.text.text_size_12 Колл-центр

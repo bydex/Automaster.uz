@@ -1,0 +1,58 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "Automaster.uz"
+	-
+		let links = [
+			{title: 'Главная', href: '/', active: true},
+			{title: 'Решения', href: '/solution', active: false},
+			{title: 'Портфолио', href: '/portfolio', active: false},
+			{title: 'О нас', href: '/about-us', active: false},
+		],
+		language = [
+			{value: 'rus', active: true},
+			{value: 'eng', active: false}
+		],
+		bigBanner = [
+			{
+				title: 'Новое поступление шиномонтажных станков',
+				para: 'Автоматический ввод трех  параметров,<br/> LCD монитор,  мультиоператор, aludata, 220В',
+				button: 'Подробнее',
+				dotDesc: "Новые поступления",
+			},
+			{
+				title: 'Новое поступление шиномонтажных станков',
+				para: 'Автоматический ввод трех  параметров,<br/> LCD монитор,  мультиоператор, aludata, 220В',
+				button: 'Подробнее',
+				dotDesc: "Открытие нового офиса",
+			},
+			{
+				title: 'Новое поступление шиномонтажных станков',
+				para: 'Автоматический ввод трех  параметров,<br/> LCD монитор,  мультиоператор, aludata, 220В',
+				button: 'Подробнее',
+				dotDesc: "Запуск нового проекта",
+			},
+			{
+				title: 'Новое поступление шиномонтажных станков',
+				para: 'Автоматический ввод трех  параметров,<br/> LCD монитор,  мультиоператор, aludata, 220В',
+				button: 'Подробнее',
+				dotDesc: "Запуск нового проекта",
+			},
+			{
+				title: 'Новое поступление шиномонтажных станков',
+				para: 'Автоматический ввод трех  параметров,<br/> LCD монитор,  мультиоператор, aludata, 220В',
+				button: 'Подробнее',
+				dotDesc: "Запуск нового проекта",
+			},
+		];
+
+block content
+	include ../blocks/modules/main-menu/main-menu
+	include ../blocks/modules/big-banner/big-banner
+
+
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

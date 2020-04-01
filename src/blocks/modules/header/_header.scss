@@ -1,0 +1,9 @@
+.header {
+    .items {
+        @include row-flex();
+        justify-content: space-between;
+    }
+    .item-1, .item-2 {
+        @include col();
+    }
+}
