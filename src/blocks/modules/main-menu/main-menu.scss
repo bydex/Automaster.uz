@@ -11,6 +11,13 @@
         #{$this}__dropdown {
             transform: translateX(0);
         }
+        #{$this}__left {
+            &::before {
+                transform: rotate(45deg) translateX(75%);
+                background: $primaryColor;
+                opacity: 1;
+            }
+        }
     }
     &:hover, &.active {
         #{$this}__left {
@@ -32,11 +39,19 @@
         position: relative;
         height: inherit;
         padding: 16px 11px;
-        transition: .5s;
+        overflow: hidden;
         background-color: $primaryColor;
-        border-right: 1px solid rgba(6, 41, 69, 0.25);
+        transition: .5s;
         user-select: none;
         cursor: pointer;
+
+        &::before {
+            right: 0;
+            bottom: 10%;
+            transform: rotate(45deg) translateX(140%);
+            opacity: 0;
+            transition: .3s;
+        }
     }
     &__logo {
         .path1, .icon-mini-logo-text {

@@ -76,13 +76,19 @@ p {
         display: block;
         transform: rotate(45deg);
         background: inherit;
-        transition: transform .3s;
+        transition: transform .5s;
     }
     &_size {
         &_small {
             &::before {
                 width: 10px;
                 height: 10px;
+            }
+        }
+        &_large {
+            &::before {
+                width: 24px;
+                height: 24px;
             }
         }
     }
@@ -97,4 +103,22 @@ p {
 
 .items {
     @include row-flex();
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $primaryColor;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    &, &:hover {
+        background: $secondaryColor;
+        border-radius: 5px;
+    }
 }

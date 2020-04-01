@@ -1,9 +1,9 @@
 .big-banner
-    //- .big-banner__bg.js-top-slider-bg.swiper-container
-    //-     .swiper-wrapper
-    //-         each val, index in bigBanner
-    //-             .swiper-slide
-    //-                 .big-banner__bg-item
+    .big-banner__bg.js-top-slider-bg.swiper-container
+        .swiper-wrapper
+            each val, index in bigBanner
+                .swiper-slide
+                    .big-banner__bg-item(style=`background-image: url(${val.image})`)
     .big-banner__inner.container
         include ../header/header
         .big-banner__slider.js-top-slider.swiper-container

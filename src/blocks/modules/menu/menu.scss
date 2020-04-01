@@ -1,0 +1,108 @@
+.menu {
+    color: $white;
+
+    &__header {
+        margin-bottom: rem(100);
+        &-positions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: $secondaryColor;
+        }
+        &-desc {
+            max-width: 260px;
+            margin-left: 30px;
+            font-weight: 300;
+        }
+        h5 {
+            margin-bottom: 5px;
+        }
+    }
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__icon {
+        display: inline-block;
+        margin-bottom: 50px;
+    }
+    &__item {
+        width: 25%;
+        cursor: pointer;
+        user-select: none;
+
+        &-text {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: .5s;
+        }
+        &:not(:nth-child(4n + 4)) {
+            border-right: 1px solid rgba(255,255,255, .25);
+        }
+        &:not(:nth-last-child(-n+4)) {
+            border-bottom: 1px solid rgba(255,255,255, .25);
+        }
+        &-hover {
+            &::before {
+                bottom: 20px;
+            }
+        }
+
+        $t: &;
+        &:hover {
+            #{$t}-img {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            #{$t}-text {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            #{$t}-hover {
+                opacity: 1;
+
+                &::before {
+                    bottom: 0;
+                    left: 10%;
+                    transform: translateY(50%) rotate(45deg);
+                    background: $secondaryColor;
+                }
+            }
+        }
+    }
+    &__item-inner {
+        position: relative;
+        padding: 30px;
+        height: rem(230);
+    }
+    &__item-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background: $secondaryColor;
+        transition: .5s;
+    }
+    &__item-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: translateX(50%);
+        opacity: 0;
+        transition: .5s;
+    }
+    &__icon {
+        font-size: 50px;
+    }
+    h2 {
+        font-weight: 500;
+    }
+    .items {
+    }
+    .item {
+        @include col();
+        @include size(6);
+    }
+}

@@ -39,6 +39,9 @@
                 width: 25px;
             }
         }
+        &.active {
+            color: $secondaryColor;
+        }
     }
 
     &__right {
