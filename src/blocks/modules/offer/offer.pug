@@ -1,0 +1,18 @@
+section.section.section_size_large.offers
+    .container
+        h2 Готовые решения
+        .swiper-container.offers-slider
+            .swiper-wrapper
+                - let i = 1;
+                each val, index in offers
+                    .swiper-slide
+                        .offer.padding-v-30
+                            .offer__header.padding-h-30
+                                h3.offer__title= val.title
+                                .offer__text.text.text_size_12.text_color_white= val.desc
+                            .offer__footer
+                                picture
+                                    source(srcset=`./img/offer-${i}.webp`)
+                                    img.offer__img(src=`./img/offer-${i++}.png`)
+                                .offer__btn-wrapper.padding-h-30
+                                    a.offer__btn(href="") Подробнее

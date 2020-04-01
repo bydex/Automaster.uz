@@ -17,7 +17,7 @@ body, html {
     overflow-x: hidden;
 }
 *, ::before, ::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 .wrapper {
     display: flex;
@@ -66,9 +66,19 @@ h5 {
 p {
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     font-size: rem(16);
+    color: $primaryTextColor;
 }
-
-
+.bg-primary {
+    background-color: $primaryColor;
+}
+.advantage-b {
+    margin-bottom: rem(40);
+    &__icon {
+        display: inline-block;
+        margin-bottom: rem(20);
+        font-size: rem(48);
+    }
+}
 .cube {
     &::before {
         content: '';
@@ -121,4 +131,52 @@ p {
         background: $secondaryColor;
         border-radius: 5px;
     }
+}
+
+
+.section {
+    &_size {
+        &_small {
+            padding: rem(50) 0;
+        }
+        &_medium {
+            padding: rem(75) 0;
+        }
+        &_large {
+            padding: rem(100) 0;
+        }
+        &_mega {
+            padding: rem(125) 0;
+        }
+        &_ultra {
+            padding: rem(150) 0;
+        }
+    }
+}
+
+.offers {
+    .swiper-slide {
+        height: auto;
+    }
+    h2 {
+        margin-bottom: rem(45);
+        color: $primaryColor;
+    }
+    .items {
+
+    }
+    .item {
+        @include col();
+        @include size(3);
+    }
+}
+
+.padding-30 {
+    padding: rem(30);
+}
+.padding-h-30 {
+    padding: 0 rem(30);
+}
+.padding-v-30 {
+    padding: rem(30) 0;
 }

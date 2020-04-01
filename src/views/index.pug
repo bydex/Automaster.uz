@@ -96,11 +96,60 @@ block variables
 				icon: 'icon-menu-tire',
 				img: 'icon-menu-stands'
 			},
+		],
+		advantage = [
+			{
+				title: 'Опыт разработки диагностического оборудования',
+				icon: 'repair'
+			},
+			{
+				title: 'Регулярное участие в технических конференциях',
+				icon: 'building'
+			},
+			{
+				title: 'Участие в обучении и подготовке специалистов СТО',
+				icon: 'worker'
+			},
+			{
+				title: 'Опыт работы на дилерских и независимых СТО',
+				icon: 'wheels'
+			},
+			{
+				title: 'Регулярные обучения у производителей оборудования',
+				icon: 'car'
+			},
+			{
+				title: 'Опыт разработки диагностического оборудования',
+				icon: 'repair'
+			},
+		],
+		offers = [
+			{
+				title: 'Premium',
+				desc: 'Set of tire equipment on the basis of durable machines of Italian production. Precise work with all types of wheels. High resource machines.',
+			},
+			{
+				title: 'Electro',
+				desc: 'Set of tire equipment on the basis of durable machines of Italian production. Precise work with all types of wheels. ',
+			},
+			{
+				title: 'Standard',
+				desc: 'Set of tire equipment on the basis of durable machines of Italian production. Precise work with all types of wheels. High resource machines.',
+			},
+			{
+				title: 'Electro',
+				desc: 'Set of tire equipment on the basis of durable machines of Italian production. Precise work with all types of wheels. High resource machines.',
+			},
 		]
 
 block content
 	include ../blocks/modules/main-menu/main-menu
 	include ../blocks/modules/big-banner/big-banner
+	include ../blocks/modules/advantages/advantages
+	section.section.section_size_medium.bg-primary
+		.container
+			include ../blocks/modules/menu/menu
+	include ../blocks/modules/offer/offer
 
 
 

@@ -1,0 +1,45 @@
+.offer {
+    $t: &;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: $primaryColor;
+    transition: .5s;
+
+    img {
+        max-width: 100%;
+    }
+    &:hover {
+        background: $secondaryColor;
+
+        #{$t}__title, #{$t}__btn {
+            color: $primaryColor;
+        }
+        #{$t}__text {
+            color: $primaryTextColor;
+        }
+    }
+    &__header {
+        margin-bottom: rem(25);
+    }
+    &__title {
+        margin-bottom: rem(5);
+        color: $secondaryColor;
+        transition: .5s;
+    }
+    &__text {
+        transition: .5s;
+    }
+    &__img {
+        margin-bottom: rem(10);
+    }
+    &__btn-wrapper {
+        text-align: right;
+    }
+    &__btn {
+        font-weight: 500;
+        color: $white;
+        transition: .5s;
+    }
+}

@@ -80,6 +80,8 @@
         left: 0;
         width: 100vw;
         height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
         transform: translateX(-100%);
         padding-left: $leftPadd;
         background-color: $primaryColor;

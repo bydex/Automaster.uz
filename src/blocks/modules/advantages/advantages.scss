@@ -1,0 +1,26 @@
+.advantages {
+    h4 {
+        margin-bottom: rem(50);
+        color: $primaryColor;
+    }
+    .items {
+    }
+    .item-1 {
+        @include col();
+        @include size(5);
+        @include shift-right(1);
+    }
+    .item-2 {
+        @include col();
+        @include row-flex();
+        @include row-offsets();
+        align-items: flex-start;
+        justify-self: flex-start;
+        @include size(6);
+    }
+    .sub-item-2 {
+        @include col();
+        @include size(5);
+        @include shift-right(1);
+    }
+}
