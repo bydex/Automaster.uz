@@ -140,7 +140,26 @@ block variables
 				title: 'Electro',
 				desc: 'Set of tire equipment on the basis of durable machines of Italian production. Precise work with all types of wheels. High resource machines.',
 			},
-		]
+		],
+		contacts = [
+			{
+				icon: 'phone',
+				title: 'Номер телефона',
+				type: 'tel',
+				number: [
+					'99 777 555 66',
+					'71 256 55 66'
+				]
+			},
+			{
+				icon: 'mail',
+				title: 'Email адрес',
+				type: 'mailto',
+				number: [
+					'info@automaster.uz',
+				]
+			}
+		];
 
 block content
 	include ../blocks/modules/main-menu/main-menu
@@ -150,7 +169,7 @@ block content
 		.container
 			include ../blocks/modules/menu/menu
 	include ../blocks/modules/offer/offer
-
+	include ../blocks/modules/feedback/feedback
 
 
 block scripts

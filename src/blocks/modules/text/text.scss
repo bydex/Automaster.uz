@@ -17,6 +17,9 @@
         }
     }
     &_color {
+        &_textPrimary {
+            color: $primaryTextColor;
+        }
         &_primary {
             color: $primaryColor;
         }

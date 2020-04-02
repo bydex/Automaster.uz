@@ -1,0 +1,15 @@
+.contact {
+    &__icon {
+        display: inline-block;
+        margin-bottom: rem(5);
+        color: #fff;
+        font-size: 24px;
+    }
+    &__title {
+        margin-bottom: rem(5);
+    }
+    &__number {
+        margin-bottom: rem(5);
+        color: $backgroundLight;
+    }
+}

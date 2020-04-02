@@ -1,0 +1,64 @@
+.feedback {
+    position: relative;
+    margin-bottom: 20px;
+    &::before {
+        bottom: 0;
+        left: 10%;
+        transform: translateY(50%) rotate(45deg);
+    }
+    .items {
+        justify-content: center;
+    }
+    .item {
+        @include col();
+        @include size(10);
+    }
+    &__header {
+        margin-bottom: rem(90);
+    }
+    h2 {
+        color: $secondaryColor;
+
+        &:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+    }
+    &__body {
+        @include row-flex();
+    }
+    .body-item {
+        &-1 {
+            @include col();
+            @include size(5);
+        }
+        &-2 {
+            @include col();
+            @include size(7);
+        }
+    }
+    .item-inputs {
+        @include row-flex();
+    }
+    .item-input {
+        @include col();
+        @include size(6);
+    }
+    &__contact {
+        &:not(:last-child) {
+            margin-bottom: rem(60);
+        }
+    }
+    &__input {
+        margin-bottom: rem(15);
+    }
+    &__send {
+        margin-top: rem(30);
+        span {
+            vertical-align: middle;
+            margin-right: rem(15);
+        }
+    }
+    .item-inputs {
+        margin-bottom: rem(45);
+    }
+}

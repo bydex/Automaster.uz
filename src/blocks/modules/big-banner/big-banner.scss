@@ -14,6 +14,7 @@
         min-height: 100vh;
     }
     &__slider {
+        cursor: grab;
         .swiper-slide {
             opacity: 0;
             transform: scale(.8);
@@ -107,10 +108,33 @@
         width: 100%;
         height: 100%;
 
+        .swiper-slide {
+            width: 100% !important;
+        }
         &-item {
             height: 100vh;
             background: url(../img/big-banner_bg.jpg) no-repeat center;
             background-size: cover;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba($color: #000000, $alpha: .5);
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background: rgba($color: $primaryColor, $alpha: .25);
+            }
         }
     }
     h1 {

@@ -1,0 +1,10 @@
+.footer {
+    margin-top: rem(90);
+    background-color: rgba(#E6E7E8, .5);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(15) 0;
+    }
+}

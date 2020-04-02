@@ -117,7 +117,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  max-width: 10px;
 }
 
 /* Track */
@@ -179,4 +179,12 @@ p {
 }
 .padding-v-30 {
     padding: rem(30) 0;
+}
+
+
+.link {
+    transition: .3s;
+    &:hover {
+        opacity: .8;
+    }
 }

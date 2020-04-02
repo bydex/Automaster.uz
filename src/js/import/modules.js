@@ -5,4 +5,6 @@ import "%modules%/text/text";
 import "%modules%/big-banner/big-banner";
 import "%modules%/menu/menu";
 import "%modules%/offer/offer";
+import "%modules%/feedback/feedback";
+import "%modules%/input/input";
 import "%modules%/footer/footer";
