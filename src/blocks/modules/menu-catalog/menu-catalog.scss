@@ -1,0 +1,85 @@
+.menu-catalog {
+    justify-content: space-between;
+    @include row-flex();
+
+    &_theme {
+        &_white {
+            color: #fff;
+        }
+    }
+
+    &__list-item {
+        transition: color, .3s;
+        will-change: color;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($color: $primaryTextColor, $alpha: .25);
+        }
+        &:hover {
+            color: $secondaryColor;
+        }
+    }
+    &__link {
+        position: relative;
+        display: block;
+        padding: rem(25) rem(60) rem(25) 0;
+
+        &:before {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            font-size: rem(16);
+            color: $white;
+            opacity: 0;
+            transition: right, opacity, .3s;
+            will-change: right, opacity;
+        }
+
+        &:hover {
+            &:before {
+                right: rem(40);
+                opacity: 1;
+            }
+        }
+    }
+    &__description-head {
+        margin-bottom: rem(15);
+    }
+    &__description-body {
+
+    }
+    &__back-btn {
+        position: relative;
+        padding-left: rem(24);
+        text-align: left;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: rem(16);
+        }
+        &:hover {
+            color: $secondaryColor;
+            transition: color, .3s;
+            will-change: color;
+        }
+    }
+    .description-col {
+        @include col();
+        @include size(4);
+    }
+    .sections-col {
+        @include col();
+        @include size(6);
+    }
+    ul {
+        list-style-type: none;
+    }
+    h2 {
+        padding-bottom: rem(20);
+        margin-bottom: rem(20);
+        border-bottom: 1px solid rgba($color: $primaryTextColor, $alpha: .25);
+    }
+}

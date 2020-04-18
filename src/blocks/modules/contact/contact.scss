@@ -2,11 +2,18 @@
     &__icon {
         display: inline-block;
         margin-bottom: rem(5);
-        color: #fff;
-        font-size: 24px;
+        margin-right: rem(10);
+        color: $backgroundLight;
+        font-size: rem(24);
+        @include sm(font-size, rem(20));
+        @include sm(margin-bottom, rem(10));
+
     }
     &__title {
         margin-bottom: rem(5);
+    }
+    &__title-wrapper {
+        display: flex;align-items: center;
     }
     &__number {
         margin-bottom: rem(5);

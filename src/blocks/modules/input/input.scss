@@ -4,29 +4,38 @@
     position: relative;
     color: #fff;
 
-    &.is-filled, &.is-focused {
-        #{$t}__label {
-            top: 0;
-            transform: translateY(-50%);
-            font-size: rem(12);
-            color: $secondaryColor;
-        }
-    }
-    &__label {
+    &:before {
+        content: attr(data-label);
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-60%);
-        transition: .3s;
+        transition: color, font-size, transform, top, .3s;
         pointer-events: none;
         user-select: none;
+        will-change: color, font-size, transform, top;
+
+        @include xs(font-size, rem(14));
+    }
+    &_area {
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: rem(12);
+            border: rem(5) solid transparent;
+            border-right: rem(5) solid rgba($color: $white, $alpha: .5);
+            border-bottom: rem(5) solid rgba($color: $white, $alpha: .5);
+            pointer-events: none;
+        }
     }
     &__area {
         display: block;
         width: 100%;
-        height: 41px;
-        min-height: 41px;
-        padding: 10px 0;
+        height: rem(41);
+        min-height: rem(41);
+        max-height: rem(164);
+        padding: rem(10) 0;
         color: $backgroundLight;
         font-weight: 500;
         background: transparent;
@@ -36,5 +45,16 @@
         line-height: normal;
         border-bottom: 2px solid #fff;
         resize: vertical;
+
+        @include xs(font-size, rem(14));
+    }
+    &.is-filled, &.is-focused {
+        &:before {
+            top: 0;
+            transform: translateY(-50%);
+            font-size: rem(12);
+            color: $secondaryColor;
+            @include xs(font-size, rem(10));
+        }
     }
 }

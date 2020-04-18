@@ -3,9 +3,10 @@
         .swiper-wrapper
             each val, index in bigBanner
                 .swiper-slide
-                    .big-banner__bg-item(style=`background-image: url(${val.image})`)
+                    .big-banner__bg-item(data-webp=`url(./img/${val.image})`)
     .big-banner__inner.container
-        include ../header/header
+        include ../main-menu/main-menu
+        include ../nav/nav
         .big-banner__slider.js-top-slider.swiper-container
             .swiper-wrapper
                 each val, index in bigBanner
@@ -16,11 +17,9 @@
                                 .big-banner__text
                                     p.text.text_color_white.text_size_20 !{val.para}
                                 a.btn.btn_theme_primary.btn_size_standard.btn_text_left.cube.cube_size_small(href="#")= val.button
-            .swiper-pagination
         .big-banner__dots.js-top-slider-dots.swiper-container
             .swiper-wrapper
                 each val, index in bigBanner
                     .swiper-slide
                         .big-banner__dot
-                            span.after
                             .big-banner__title.text.text_size_14.text_color_white= val.dotDesc

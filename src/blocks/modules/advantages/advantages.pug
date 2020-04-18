@@ -5,8 +5,9 @@ section.section.section_size_mega.advantages
                 h4 Основа нашего подхода.<br> Глубокое понимание технологических особенностей предлагаемых нами стендов и приборов
                 p Мы понимаем, что лучший залог успеха нашей компании — это успех работы наших клиентов. Поэтому мы гарантируем, что результатом нашего коммерческого предложения будет не то оборудование, которое проще привезти и продать, а то, которое больше подходит именно под ваши задачи.
             .item-2
-                each val, index in advantage
-                    .sub-item-2
-                        .advantage-b
-                            span(class=`advantage-b__icon icon-technolgy-${val.icon}`)
-                            .text.text_weight_500.text_size_12= val.title
+                .advantages__wrapper
+                    each val, index in advantage
+                        .sub-item-2
+                            .advantage-b
+                                span(class=`advantage-b__icon icon-technolgy-${val.icon}`)
+                                .text.text_weight_500.text_size_12= val.title

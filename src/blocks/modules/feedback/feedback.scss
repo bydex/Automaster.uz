@@ -1,20 +1,41 @@
 .feedback {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: rem(20);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     &::before {
         bottom: 0;
         left: 10%;
         transform: translateY(50%) rotate(45deg);
     }
-    .items {
-        justify-content: center;
-    }
-    .item {
-        @include col();
-        @include size(10);
-    }
+
     &__header {
         margin-bottom: rem(90);
+        @include md(margin-bottom, rem(40));
+    }
+    &__body {
+        @include row-flex();
+    }
+    &__contact {
+        &:not(:last-child) {
+            margin-bottom: rem(60);
+            @include md(margin-bottom, rem(20));
+        }
+    }
+    &__input {
+        display: block;
+        margin-bottom: rem(15);
+    }
+    &__send {
+        margin-top: rem(30);
+
+        @include md(margin-top, rem(15));
+        span {
+            vertical-align: middle;
+            margin-right: rem(15);
+        }
     }
     h2 {
         color: $secondaryColor;
@@ -23,42 +44,38 @@
             margin-bottom: rem(25);
         }
     }
-    &__body {
-        @include row-flex();
-    }
-    .body-item {
-        &-1 {
-            @include col();
-            @include size(5);
-        }
-        &-2 {
-            @include col();
-            @include size(7);
-        }
-    }
-    .item-inputs {
-        @include row-flex();
-    }
-    .item-input {
+
+    .inner-wrapper {
         @include col();
-        @include size(6);
+        @include size(10);
+        @include size-md(11);
+        @include size-sm(12);
     }
-    &__contact {
-        &:not(:last-child) {
-            margin-bottom: rem(60);
+    .info-col {
+        @include col();
+        @include size(5);
+        @include size-sm(12);
+        @include md(margin-bottom, rem(40));
+    }
+    fieldset {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        @include col();
+        @include size(7);
+        @include size-sm(12);
+
+        .col {
+            @include col();
+            @include size(6);
+            @include size-md(12);
         }
-    }
-    &__input {
-        margin-bottom: rem(15);
-    }
-    &__send {
-        margin-top: rem(30);
-        span {
-            vertical-align: middle;
-            margin-right: rem(15);
+        .col-expand {
+            @include col();
+            @include size(12);
         }
-    }
-    .item-inputs {
-        margin-bottom: rem(45);
+        .row {
+            @include row-flex();
+        }
     }
 }

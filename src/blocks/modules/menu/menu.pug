@@ -8,11 +8,11 @@
                     .text.text_size_96.text_color_secondary.text_weight_700 246
                     .menu__header-desc
                         h5 Поизиций
-                        .text На данный момент в наших руках, для вашего пользования
+                        .menu__desc.text На данный момент в наших руках, для вашего пользования
 
     .menu__body
         each val, index in menu
-            .menu__item
+            .menu__item&attributes(isInModal)
                 .menu__item-inner
                     .menu__item-inner.menu__item-hover.cube.cube_size_large
                         picture

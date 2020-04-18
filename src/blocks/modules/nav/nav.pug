@@ -1,0 +1,29 @@
+nav.nav.nav_theme_white
+      .nav__hamburger-wrapper
+        span.nav__hamburger.icon-hamburger(data-modal-id=modal.nav)
+      .items
+        .item-1
+          .nav__links(data-modal=modal.nav)
+            .nav__links-mobile
+                span.close-btn.icon-close.nav__close(data-modal-id=modal.nav)
+                each val, index in links
+                    a.nav__link.text.text_size_12(class=val.active ? 'active' : '' href=val.href)= val.title
+            .nav__contacts-mobile
+              each val, index in contacts
+                .contact.nav__contact
+                    .contact__title-wrapper
+                        span(class=`contact__icon icon-form-${val.icon}`)
+                        .contact__title.text.text_weight_500.text_color_secondary= val.title
+                    .contact__number
+                        each j, index in val.number
+                            a.link(href=`${val.type}:${j}`)= j
+                            unless index + 1 === val.number.length
+                                span &#x20;—&#x20;
+        .item-2
+          .nav__right
+            .nav__languages
+              each val, index in language
+                button.nav__language.text.text_size_12(class=val.active ? 'active' : '')= val.value
+            .nav__phone-wrapper
+              a.nav__phone.text.text_theme_20.text_weight_700.link(href="tel:998 71 276 64 98") 998 71 276 64 98
+              .nav__subtitle.text.text_size_12 Колл-центр

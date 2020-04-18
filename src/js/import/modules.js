@@ -7,4 +7,5 @@ import "%modules%/menu/menu";
 import "%modules%/offer/offer";
 import "%modules%/feedback/feedback";
 import "%modules%/input/input";
+import "%modules%/nav/nav";
 import "%modules%/footer/footer";

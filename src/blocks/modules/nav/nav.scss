@@ -1,7 +1,9 @@
 .nav {
     $this: &;
 
-    padding: 30px 0;
+    padding: rem(30) 0;
+
+    @include sm(padding, rem(20) 0);
 
     &_theme {
         &_white {
@@ -14,14 +16,36 @@
         }
     }
     &__links {
-        margin: 0 -15px;
+        margin: 0 rem(-15);
+
+        @include sm(position, fixed);
+        @include sm(top, 0);
+        @include sm(right, 0);
+        @include sm(bottom, 0);
+        @include sm(left, 0);
+        @include sm(z-index, 10);
+        @include sm(display, flex);
+        @include sm(flex-direction, column);
+        @include sm(justify-content, space-between);
+        @include sm(transform, translateX(-100%));
+        @include sm(background-color, $primaryColor);
+        @include sm(transition, .5s);
+
+        &.active {
+            @include sm(transform, translateX(0));
+        }
     }
     &__link {
         display: inline-block;
         position: relative;
-        margin: 0 15px;
-        padding: 9px 0;
+        margin: 0 rem(15);
+        padding: rem(9) 0;
         text-transform: uppercase;
+
+        @include sm(display, block);
+        @include sm(margin, 0 0 rem(24) 0);
+        @include sm(font-size, rem(18));
+        @include sm(font-weight, 700);
 
         &:after {
             content: "";
@@ -29,14 +53,14 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
+            height: rem(1);
             transition: .3s;
             background-color: $secondaryColor;
         }
 
         &:hover, &.active {
             &::after {
-                width: 25px;
+                width: rem(25);
             }
         }
         &.active {
@@ -47,14 +71,16 @@
     &__right {
         display: flex;
         align-items: flex-start;
+
+        @include sm(display, none);
     }
     &__languages {
         display: flex;
-        padding-right: 34px;
-        margin: 0 -7.5px;
+        padding-right: rem(34);
+        margin: 0 rem(-7.5);
     }
     &__language {
-        padding: 5px 7.5px;
+        padding: rem(5) rem(7.5);
         text-transform: uppercase;
         transition: .3s;
 
@@ -63,7 +89,40 @@
         }
     }
     &__phone-wrapper {
-        padding-left: 34px;
+        padding-left: rem(34);
         border-left: 1px solid;
+    }
+    &__contacts-mobile {
+        display: none;
+        background: rgba(0, 0, 0, 0.05);
+        padding: rem(35) rem(40) rem(35) rem(40);
+
+        @include sm(display, block);
+    }
+    &__links-mobile {
+        position: relative;
+        @include sm(padding, rem(60) rem(40) rem(35) rem(40));
+    }
+    &__hamburger-wrapper {
+        display: none;
+        justify-content: flex-end;
+
+        @include sm(display, flex);
+    }
+    &__hamburger {
+        font-size: rem(24);
+        cursor: pointer;
+    }
+    &__contact {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+    &__close {
+        display: none;
+        @include sm(position, absolute);
+        @include sm(top, rem(20));
+        @include sm(right, rem(30));
+        @include sm(display, block);
     }
 }

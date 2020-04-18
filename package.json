@@ -73,6 +73,7 @@
     },
     "dependencies": {
         "@babel/polyfill": "^7.8.7",
+        "nodelist-foreach-polyfill": "^1.2.0",
         "smart-grid": "^2.1.2"
     },
     "husky": {

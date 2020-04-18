@@ -25,8 +25,8 @@ button, .btn {
     }
     &_size {
         &_standard {
-            min-width: 230px;
-            padding: 9px 18px;
+            min-width: rem(230);
+            padding: rem(9) rem(18);
             font-size: rem(12);
         }
     }

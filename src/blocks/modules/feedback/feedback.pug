@@ -1,34 +1,31 @@
-.container
-    section.section.section_size_medium.bg-primary.feedback.cube.cube_size_large
-        .items
-            .item
-                .feedback__header
-                    h2 Хотите связаться с нами?
-                .feedback__body
-                    .body-item-1
-                        each val, index in contacts
-                            .contact.feedback__contact
+mixin input(text, type)
+    if type === 'textarea'
+        label.input.input_area.feedback__input.col-expand(data-label= text)
+            textarea.input__area
+    else
+        label.input.feedback__input.col(data-label= text)
+            input.input__area
+
+section.container
+    .section.section_size_medium.bg-primary.feedback.cube.cube_size_large
+        .inner-wrapper
+            .feedback__header
+                h2 Хотите связаться с нами?
+            form.feedback__body
+                .info-col
+                    each val, index in contacts
+                        .contact.feedback__contact
+                            .contact__title-wrapper
                                 span(class=`contact__icon icon-form-${val.icon}`)
                                 .contact__title.text.text_weight_500.text_color_secondary= val.title
-                                .contact__number
-                                    each j, index in val.number
-                                        a.link(href=`${val.type}:${j}`)= j
-                                        unless index + 1 === val.number.length
-                                            span &#x20;—&#x20;
-                    .body-item-2
-                        .item-inputs
-                            .item-input
-                                .input.feedback__input
-                                    label
-                                        span.input__label Полное имя
-                                        input.input__area
-                            .item-input
-                                .input.feedback__input
-                                    label
-                                        span.input__label Email
-                                        input.input__area
-                        .input.feedback__input
-                            label
-                                span.input__label Текст сообщения
-                                textarea.input__area
-                        button.feedback__send.link.text.text_color_white <span class="icon-form-send"></span>Отправить сообщение
+                            .contact__number
+                                each j, index in val.number
+                                    a.link(href=`${val.type}:${j}`)= j
+                                    unless index + 1 === val.number.length
+                                        span &#x20;—&#x20;
+                fieldset
+                    .row
+                        +input('Полное имя')
+                        +input('Email')
+                        +input('Текст сообщения', 'textarea')
+                    button.feedback__send.link.text.text_color_white <span class="icon-form-send"></span>Отправить сообщение

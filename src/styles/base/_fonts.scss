@@ -60,7 +60,7 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+span[class^="icon-"], span[class*=" icon-"], [class*=" icon-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -168,6 +168,7 @@
 	&_size {
 		&_big {
 			font-size: rem(58);
+			@include md(font-size, rem(32));
 		}
 	}
 	&-text {
@@ -266,7 +267,6 @@
 	}
 }
 .icon-arrow-right {
-	color: $white;
 	&:before {
 		content: "\e924";
 	}

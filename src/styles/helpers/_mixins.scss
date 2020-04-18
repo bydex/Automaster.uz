@@ -1,0 +1,43 @@
+@mixin pos-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin pos-abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@mixin pos-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-top() {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+@mixin flex-bottom() {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+@mixin flex-left() {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+@mixin flex-right() {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

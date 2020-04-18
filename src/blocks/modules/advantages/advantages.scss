@@ -2,6 +2,9 @@
     h4 {
         margin-bottom: rem(50);
         color: $primaryColor;
+
+        @include md(margin-bottom, rem(25));
+        @include xs(margin-bottom, rem(15));
     }
     .items {
     }
@@ -9,18 +12,24 @@
         @include col();
         @include size(5);
         @include shift-right(1);
+        @include size-md(6);
+        @include shift-md-right(0);
+        @include size-sm(12);
+        @include md(margin-bottom, rem(15));
     }
     .item-2 {
         @include col();
-        @include row-flex();
-        @include row-offsets();
-        align-items: flex-start;
-        justify-self: flex-start;
         @include size(6);
+        @include size-sm(12);
     }
     .sub-item-2 {
         @include col();
         @include size(5);
         @include shift-right(1);
+        @include size-md(6);
+        @include shift-md-right(0);
+    }
+    &__wrapper {
+        @include row-flex();
     }
 }

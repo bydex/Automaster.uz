@@ -1,4 +1,6 @@
 .header {
+    position: relative;
+    z-index: 5;
     .items {
         @include row-flex();
         justify-content: space-between;

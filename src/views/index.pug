@@ -17,27 +17,24 @@ block variables
 		bigBanner = [
 			{
 				title: 'Новое поступление шиномонтажных станков',
-				para: 'Автоматический ввод трех  параметров,<br/> LCD монитор,  мультиоператор, aludata, 220В',
+				para: 'Автоматический ввод трех  параметров, LCD монитор,  мультиоператор, aludata, 220В',
 				button: 'Подробнее',
 				dotDesc: "Новые поступления",
-				image: "./img/big-banner_bg-1.jpg",
-				darken: false
+				image: "big-banner_bg-1.jpg",
 			},
 			{
 				title: 'Открытие нового офиса на Нуркена Абдирова 5',
-				para: 'Новый, уютный, с гостевой комнатой,<br/> для посетителей и рабочих',
+				para: 'Новый, уютный, с гостевой комнатой, для посетителей и рабочих',
 				button: 'Подробнее',
 				dotDesc: "Открытие нового офиса",
-				image: "./img/big-banner_bg-2.jpg",
-				darken: true
+				image: "big-banner_bg-2.jpg",
 			},
 			{
 				title: 'Запуск нового проекта по реставрации автомобилей',
-				para: 'Ваш раритеный автомобиль заживет новой жизнью,<br/> после посещения нашей мастерской',
+				para: 'Ваш раритеный автомобиль заживет новой жизнью, после посещения нашей мастерской',
 				button: 'Подробнее',
 				dotDesc: "Запуск нового проекта",
-				image: "./img/big-banner_bg-3.jpg",
-				darken: true
+				image: "big-banner_bg-3.jpg",
 			},
 		],
 		menu = [
@@ -159,17 +156,24 @@ block variables
 					'info@automaster.uz',
 				]
 			}
-		];
+		],
+		modal = {
+			menu: '1',
+			nav: '2'
+		}
+		isInModal = {'data-catalog-category': ''};
 
 block content
-	include ../blocks/modules/main-menu/main-menu
-	include ../blocks/modules/big-banner/big-banner
-	include ../blocks/modules/advantages/advantages
-	section.section.section_size_medium.bg-primary
-		.container
-			include ../blocks/modules/menu/menu
-	include ../blocks/modules/offer/offer
-	include ../blocks/modules/feedback/feedback
+	header.header
+		include ../blocks/modules/big-banner/big-banner
+	main
+		include ../blocks/modules/advantages/advantages
+		section.section.section_size_medium.bg-primary
+			.container
+				- isInModal = {'data-modal-id': modal.menu, 'data-catalog-category': ''};
+				include ../blocks/modules/menu/menu
+		include ../blocks/modules/offer/offer
+		include ../blocks/modules/feedback/feedback
 
 
 block scripts

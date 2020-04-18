@@ -1,0 +1,4 @@
+mixin webp(path, extension, className = false, alt = '')
+    picture
+        source(srcset=`./img/${path}.webp`)
+        img(src=`${path}.${extension}` class= className alt=alt)

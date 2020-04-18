@@ -9,11 +9,20 @@
 
     &.active {
         #{$this}__dropdown {
-            transform: translateX(0);
+            transform: translate3d(0, 0, 0);
+
+            .container {
+                opacity: 1;
+                transition: {
+                    property: opacity;
+                    duration: .3s;
+                    delay: .7s;
+                }
+            }
         }
         #{$this}__left {
             &::before {
-                transform: rotate(45deg) translateX(75%);
+                transform: rotate(45deg) translate3d(75%, 0, 0);
                 background: $primaryColor;
                 opacity: 1;
             }
@@ -38,39 +47,46 @@
     &__left {
         position: relative;
         height: inherit;
-        padding: 16px 11px;
+        width: $leftPadd;
+        padding: rem(16) rem(11);
         overflow: hidden;
         background-color: $primaryColor;
-        transition: .5s;
+        transition: background-color, .5s;
         user-select: none;
         cursor: pointer;
+
+        @include md(width, $leftPaddSmall);
+        @include md(padding, rem(16) rem(5));
 
         &::before {
             right: 0;
             bottom: 10%;
-            transform: rotate(45deg) translateX(140%);
+            transform: rotate(45deg) translate3d(140%, 0, 0);
             opacity: 0;
-            transition: .3s;
+            transition: {
+                property: transform, opacity, background-color;
+                duration: .3s;
+            }
         }
     }
     &__logo {
         .path1, .icon-mini-logo-text {
-            transition: .5s;
+            transition: color, .5s;
         }
     }
     &__title {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate(-90deg);
+        transform: translate3d(-50%, -50%, 0) rotate(-90deg);
         white-space: nowrap;
 
         &-icon {
-            margin-right: 15px;
+            margin-right: rem(15);
             vertical-align: middle;
         }
         & > span {
-            transition: .5s;
+            transition: color .5s;
         }
     }
 
@@ -80,11 +96,33 @@
         left: 0;
         width: 100vw;
         height: 100%;
+        padding-left: $leftPadd;
         overflow-y: auto;
         overflow-x: hidden;
-        transform: translateX(-100%);
-        padding-left: $leftPadd;
+        transform: translate3d(-100%, 0, 0);
         background-color: $primaryColor;
         transition: .5s;
+        will-change: transform, background-color;
+
+        &-inner {
+            padding: rem(30) 0 rem(50) 0;
+            will-change: opacity, display;
+
+            &.is-hidden {
+                display: none;
+                opacity: 0;
+            }
+        }
+        .container {
+            opacity: 0;
+            transition: opacity, .2s;
+        }
+
+        @include md(padding-left, $leftPaddSmall);
+    }
+    &__close-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: rem(15);
     }
 }

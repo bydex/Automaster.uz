@@ -14,21 +14,24 @@ gulp.task("smart-grid", (cb) => {
             container: "container"
         },
         container: {
-            maxWidth: "1312px",
+            maxWidth: "82rem",
             fields: "0.9375rem" // side fields - 15px
         },
         breakPoints: {
             xs: {
-                width: "20rem" // 320px
+                width: "26.25rem" // 420px
+            },
+            xsm: {
+                width: "41.25rem" // 660px
             },
             sm: {
-                width: "36rem" // 576px
+                width: "47.5rem" // 760px
             },
             md: {
-                width: "48rem" // 768px
+                width: "62rem" // 992px
             },
             lg: {
-                width: "62rem" // 992px
+                width: "70rem" // 1120px
             },
             xl: {
                 width: "75rem" // 1200px

@@ -1,9 +1,31 @@
-.main-menu
+mixin catalogItem(text)
+    li.menu-catalog__list-item.text.text_size_30.text_color_white.text_weight_500
+        a.menu-catalog__link.icon-arrow-right(href="#")= text
+
+.main-menu(data-modal=modal.menu)
     .main-menu__dropdown
         .container
-            include ../header/header
-            include ../menu/menu
-    .main-menu__left.js-main-menu.cube.cube_size_large
+            .main-menu__dropdown-inner.is-active(data-catalog-menu)
+                .main-menu__close-wrapper
+                    span.close-btn.icon-close.main-menu__close(data-modal-id=modal.menu)
+                include ../menu/menu
+            .main-menu__dropdown-inner.is-hidden(data-catalog-container)
+                .main-menu__close-wrapper
+                    span.close-btn.icon-close.main-menu__close(data-modal-id=modal.menu)
+                .menu-catalog.menu-catalog_theme_white
+                    article.description-col
+                        .menu-catalog__description-head
+                            button.menu-catalog__back-btn.text.text_color_white.icon-arrow-left(data-catalog-category) Вернуться к каталогу
+                        .menu-catalog__description-body
+                            h2  Шиномонтажное оборудовния
+                            p Шиномонтажные станки подразделяются на два типа: полуавтоматические и автоматические агрегаты. Основным отличием между ними является регулировка фиксирующей лапы.
+                            p На автомате она перемещается посредством нажатия на педаль, активирующую пневматический цилиндр. На полуавтомате управление зажимным приспособлением осуществляется вручную.
+                    ul.sections-col
+                        +catalogItem('Легковые балансировочные станки')
+                        +catalogItem('Легковые шиномонтажные станки')
+                        +catalogItem('Мойка колес для шиномонтажа')
+                        +catalogItem('Стенды для накачки азотом')
+    .main-menu__left.cube.cube_size_large(data-modal-id=modal.menu)
         a.main-menu__logo(href="#")
             span.icon-mini-logo.icon-mini-logo_size_big
                 span.path1

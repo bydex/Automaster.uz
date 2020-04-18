@@ -1,10 +1,18 @@
 .footer {
     margin-top: rem(90);
     background-color: rgba(#E6E7E8, .5);
+    @include md(margin-top, rem(40));
 
     &__inner {
         display: flex;
         justify-content: space-between;
         padding: rem(15) 0;
+
+        @include sm(flex-direction, column);
+    }
+    small {
+        &:not(:last-child) {
+            @include sm(margin-bottom, rem(10));
+        }
     }
 }

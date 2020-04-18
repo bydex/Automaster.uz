@@ -5,16 +5,18 @@ h1, h2, h3, h4, h5, h6, ul {
 
 .container {
     @include container();
-    @include sm(max-width, rem(510));
-    @include md(max-width, rem(690));
+    @include sm(max-width, 100%);
+    @include md(max-width, rem(900));
     @include lg(max-width, rem(930));
     @include xl(max-width, rem(1110));
 }
 
 body, html {
-    font-family: 'Gilroy', Arial, Helvetica, sans-serif;
+    min-width: rem(320);
     box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'Gilroy', Arial, Helvetica, sans-serif;
 }
 *, ::before, ::after {
     box-sizing: border-box;
@@ -25,6 +27,7 @@ body, html {
     padding-left: $leftPadd;
     min-height: 100vh;
 
+    @include md(padding-left, $leftPaddSmall);
     main {
         flex-grow: 1;
     }
@@ -48,25 +51,38 @@ a {
 
 h1 {
     font-size: rem(65);
+    @include lg(font-size, rem(50));
+    @include md(font-size, rem(40));
+    @include xs(font-size, rem(28));
 }
 h2 {
     font-size: rem(50);
+    @include lg(font-size, rem(45));
+    @include md(font-size, rem(35));
+    @include xs(font-size, rem(32));
 }
 h3 {
     font-size: rem(40);
+    @include lg(font-size, rem(35));
+    @include md(font-size, rem(30));
+    @include xs(font-size, rem(30));
 }
 h4 {
     font-size: rem(30);
+    @include md(font-size, rem(25));
+    @include xs(font-size, rem(20));
 }
 h5 {
     font-size: rem(24);
+    @include md(font-size, rem(20));
+    @include xs(font-size, rem(16));
 }
 
 
 p {
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     font-size: rem(16);
-    color: $primaryTextColor;
+    @include md(font-size, rem(14));
 }
 .bg-primary {
     background-color: $primaryColor;
@@ -86,26 +102,26 @@ p {
         display: block;
         transform: rotate(45deg);
         background: inherit;
-        transition: transform .5s;
+        transition: transform, background-color, .5s;
     }
     &_size {
         &_small {
             &::before {
-                width: 10px;
-                height: 10px;
+                width: rem(10);
+                height: rem(10);
             }
         }
         &_large {
             &::before {
-                width: 24px;
-                height: 24px;
+                width: rem(24);
+                height: rem(24);
             }
         }
     }
     &.btn {
         &::before {
             top: 100%;
-            left: 18px;
+            left: rem(18);
             transform: translateY(-50%) rotate(45deg);
         }
     }
@@ -117,7 +133,7 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  max-width: 10px;
+  max-width: rem(10);
 }
 
 /* Track */
@@ -129,7 +145,7 @@ p {
 ::-webkit-scrollbar-thumb {
     &, &:hover {
         background: $secondaryColor;
-        border-radius: 5px;
+        border-radius: rem(5);
     }
 }
 
@@ -141,12 +157,15 @@ p {
         }
         &_medium {
             padding: rem(75) 0;
+            @include md(padding, rem(40) 0);
         }
         &_large {
             padding: rem(100) 0;
+            @include md(padding, rem(40) 0);
         }
         &_mega {
             padding: rem(125) 0;
+            @include md(padding, rem(40) 0);
         }
         &_ultra {
             padding: rem(150) 0;
@@ -161,6 +180,8 @@ p {
     h2 {
         margin-bottom: rem(45);
         color: $primaryColor;
+
+        @include md(margin-bottom, rem(25))
     }
     .items {
 
@@ -168,6 +189,9 @@ p {
     .item {
         @include col();
         @include size(3);
+    }
+    &__container {
+        @include xsm(padding-right, rem(0))
     }
 }
 
@@ -187,4 +211,16 @@ p {
     &:hover {
         opacity: .8;
     }
+}
+
+
+.close-btn {
+    padding: rem(10);
+    margin: rem(-10);
+    font-size: rem(24);
+    cursor: pointer;
+}
+
+::-webkit-resizer {
+    display: none;
 }
